@@ -2,6 +2,12 @@ import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 import {Container, Row, Box, Picker, Label} from '../../components';
 import colors from '../../styles/colors';
+import {
+  HorizontalBarChart,
+  VerticalBarChart,
+} from '../../components/charts/bars';
+import {DonutPieChart} from '../../components/charts/pie';
+import {AreaChart} from '../../components/charts/area';
 
 const Home = () => {
   return (
@@ -19,14 +25,16 @@ const Home = () => {
             <Label>Year</Label>
           </Picker>
         </Row>
-        <Row spaced>
+        <Row spaced zIndex="1">
           <Label type="title" color="light" align="center">
             $ 59,271,90
           </Label>
           <Label align="center">Last 7 days: +15%</Label>
         </Row>
-        <Row fluid>{/*<AreaChart />*/}</Row>
-        <Row>
+        <Row fluid marginTop="-50px">
+          <AreaChart />
+        </Row>
+        <Row marginTop="-50px">
           <Box>
             <Row fluid>
               <Label type="subtitle" color="light">
@@ -34,7 +42,9 @@ const Home = () => {
               </Label>
               <Label>Last 7 days</Label>
             </Row>
-            <Row fluid>{/*<DonutPitChart />*/}</Row>
+            <Row fluid>
+              <DonutPieChart />
+            </Row>
           </Box>
         </Row>
         <Row marginTop="20px">
@@ -45,7 +55,9 @@ const Home = () => {
               </Label>
               <Label>Last 7 days</Label>
             </Row>
-            <Row fluid>{/*<HorizontalBarChart />*/}</Row>
+            <Row spaced fluid>
+              <HorizontalBarChart />
+            </Row>
           </Box>
         </Row>
         <Row marginTop="20px">
@@ -56,7 +68,9 @@ const Home = () => {
               </Label>
               <Label>Last 7 days</Label>
             </Row>
-            <Row fluid>{/*<VerticalBarChart />*/}</Row>
+            <Row fluid>
+              <VerticalBarChart />
+            </Row>
           </Box>
         </Row>
       </SafeAreaView>
